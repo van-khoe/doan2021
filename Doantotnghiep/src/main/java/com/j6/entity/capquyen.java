@@ -17,17 +17,17 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "capquyen", uniqueConstraints = {
-		@UniqueConstraint(columnNames = { "taikhoan_username", "vaitro_idvaitro" }) })
+		@UniqueConstraint(columnNames = { "taikhoanUsername", "vaitroIdvaitro" }) })
 public class capquyen implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int idcapquyen;
 	
-	@ManyToOne()
-	@JoinColumn(name = "taikhoan_username")
+	@ManyToOne
+	@JoinColumn(name = "taikhoanUsername")
 	private taikhoan account;
-	@ManyToOne()
-	@JoinColumn(name = "vaitro_idvaitro")
+	@ManyToOne
+	@JoinColumn(name = "vaitroIdvaitro")
 	private vaitro role;
 }
