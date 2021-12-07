@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 	@RequestMapping({"/", "/home/index"})
 	public String home(Model model) {
+		model.addAttribute("trangchu", true);
 		return "redirect:/home";
 	}
 	

@@ -17,7 +17,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "capquyen", uniqueConstraints = {
-		@UniqueConstraint(columnNames = { "taikhoanUsername", "vaitroIdvaitro" }) })
+		@UniqueConstraint(columnNames = { "taikhoan_username", "vaitro_idvaitro" }) })
 public class capquyen implements Serializable {
 
 	@Id
@@ -25,9 +25,9 @@ public class capquyen implements Serializable {
 	int idcapquyen;
 	
 	@ManyToOne
-	@JoinColumn(name = "taikhoanUsername")
+	@JoinColumn(name = "taikhoan_username")
 	private taikhoan account;
 	@ManyToOne
-	@JoinColumn(name = "vaitroIdvaitro")
+	@JoinColumn(name = "vaitro_idvaitro")
 	private vaitro role;
 }

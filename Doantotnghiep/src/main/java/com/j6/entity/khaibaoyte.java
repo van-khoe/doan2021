@@ -23,7 +23,7 @@ import lombok.Data;
 public class khaibaoyte implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long idkhaibaoyte;
 	String hoten;
 	String cmnd;
@@ -34,7 +34,9 @@ public class khaibaoyte implements Serializable {
 	String diachi;
 	String bieuhien;
 	String tiepxuc;
-	boolean khaiho;
+	@Temporal(TemporalType.DATE)
+	@Column(name = "ngaykhaibao")
+	Date ngaykhaibao = new Date();
 	
 	@ManyToOne
 	@JoinColumn(name = "taikhoan_username")
